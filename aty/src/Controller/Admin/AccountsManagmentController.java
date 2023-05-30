@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controller.Admin;
-
 import static Controller.Admin.UsersManagmentController.selectedUserToUpdate;
 import static Controller.Admin.UsersManagmentController.updateStage;
 import Model.Account;
@@ -33,11 +27,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author pc
- */
+
 public class AccountsManagmentController implements Initializable {
 
     public static Account selectedAccountToUpdate;
@@ -76,18 +66,16 @@ public class AccountsManagmentController implements Initializable {
     @FXML
     private Button searchAccountBtn;
 
-    /**
-     * Initializes the controller class.
-     */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         id.setCellValueFactory(new PropertyValueFactory("id"));
-        accountNumber.setCellValueFactory(new PropertyValueFactory("account_number"));
-        userName.setCellValueFactory(new PropertyValueFactory("user_name"));
+        accountNumber.setCellValueFactory(new PropertyValueFactory("accountNumber"));
+        userName.setCellValueFactory(new PropertyValueFactory("username"));
         currency.setCellValueFactory(new PropertyValueFactory("currency"));
         balancy.setCellValueFactory(new PropertyValueFactory("balancy"));
-        creationDate.setCellValueFactory(new PropertyValueFactory("creation_date"));
-        // TODO
+        creationDate.setCellValueFactory(new PropertyValueFactory("creationDate"));
+        
     }
 
     @FXML
@@ -111,7 +99,7 @@ public class AccountsManagmentController implements Initializable {
     @FXML
     private void showAllAccounts(ActionEvent event) throws SQLException, ClassNotFoundException {
         ObservableList<Account> accountList
-                = FXCollections.observableArrayList(Account.getAllAccount());
+                = FXCollections.observableArrayList(Account.getAllAccounts());
 
         AccountTableView.setItems(accountList);
     }
