@@ -2,12 +2,12 @@
 CREATE DATABASE `bank` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 CREATE TABLE `accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `account_number` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `accountNumber` int(11) NOT NULL,
   `username` varchar(45) NOT NULL,
   `currency` varchar(45) NOT NULL,
   `balance` double NOT NULL DEFAULT 0,
-  `creation_date` date DEFAULT NULL,
+  `creationDate` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `account_number` (`account_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
